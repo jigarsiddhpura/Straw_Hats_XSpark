@@ -1,3 +1,4 @@
+
 venv/
 .env
 config.json
@@ -7,3 +8,47 @@ node_modules
 .next
 /next-env.d.ts
 sparkenv
+
+/venv
+config.json
+.env
+
+```
+# ml branch ka hai don't touch
+__pycache__
+sparkenv
+
+# dependencies
+/node_modules
+node_modules
+.next/
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+#migrations
+/drizzleMigrations
+/dbMigrations
+
+#vscode
+.vscode
+
+# local env files
+.env.local
+
+# vercel
+.vercel
+
+# logs
+/logs
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
