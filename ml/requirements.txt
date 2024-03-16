@@ -10,3 +10,6 @@ typing
 # langchain-community
 # nltk
 # torch
+
+#emotion.py
+mediapipe
