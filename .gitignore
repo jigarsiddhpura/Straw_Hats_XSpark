@@ -1,0 +1,36 @@
+# ml branch ka hai don't touch
+__pycache__
+sparkenv
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+#migrations
+/drizzleMigrations
+/dbMigrations
+
+#vscode
+.vscode
+
+# local env files
+.env.local
+
+# vercel
+.vercel
+
+# logs
+/logs
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
