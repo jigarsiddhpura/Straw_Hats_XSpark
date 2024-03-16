@@ -1,0 +1,125 @@
+#stepPath {
+  fill: none;
+  stroke: white;
+  margin: 0 2rem;
+
+  --duration: 1000ms;
+  --delay: 250ms;
+}
+
+.steps {
+  stroke-width: 4px;
+  stroke: #064331;
+  stroke-dasharray: 0 100;
+}
+
+.aos-animate .steps {
+  animation: StepPath-1 var(--duration) ease-in-out forwards
+      calc(var(--duration) * 0 + var(--delay) * 0),
+    StepPath-2 var(--duration) ease-in-out forwards
+      calc(var(--duration) * 1 + var(--delay) * 1),
+    StepPath-3 var(--duration) ease-in-out forwards
+      calc(var(--duration) * 2 + var(--delay) * 2),
+    StepPath-4 var(--duration) ease-in-out forwards
+      calc(var(--duration) * 3 + var(--delay) * 3);
+}
+
+.path-point {
+  fill: #1a202c;
+  stroke: #064331;
+}
+
+.aos-animate :is(.path-text-1, .path-point-1) {
+  opacity: 0;
+  animation: fadeIn var(--delay) ease forwards
+    calc(var(--duration) * 0 + var(--delay) * 0);
+}
+.aos-animate :is(.path-text-2, .path-point-2, .path-point-3) {
+  opacity: 0;
+  animation: fadeIn var(--delay) ease forwards
+    calc(var(--duration) * 1 + var(--delay) * 1);
+}
+.aos-animate :is(.path-text-3, .path-point-4, .path-point-5) {
+  opacity: 0;
+  animation: fadeIn var(--delay) ease forwards
+    calc(var(--duration) * 2 + var(--delay) * 2);
+}
+.aos-animate :is(.path-text-4, .path-point-6) {
+  opacity: 0;
+  animation: fadeIn var(--delay) ease forwards
+    calc(var(--duration) * 3 + var(--delay) * 3);
+}
+.aos-animate :is(.path-text-5, .path-point-7) {
+  opacity: 0;
+  animation: fadeIn var(--delay) ease forwards
+    calc(var(--duration) * 4 + var(--delay) * 4);
+}
+
+@keyframes StepPath-1 {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: 25 75;
+  }
+}
+@keyframes StepPath-2 {
+  from {
+    stroke-dasharray: 25 75;
+  }
+  to {
+    stroke-dasharray: 50 50;
+  }
+}
+@keyframes StepPath-3 {
+  from {
+    stroke-dasharray: 50 50;
+  }
+  to {
+    stroke-dasharray: 75 25;
+  }
+}
+@keyframes StepPath-4 {
+  from {
+    stroke-dasharray: 75 25;
+  }
+  to {
+    stroke-dasharray: 100 0;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.typewriter span {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid #6366f1; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #6366f1;
+  }
+}
