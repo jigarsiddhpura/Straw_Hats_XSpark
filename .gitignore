@@ -1,3 +1,14 @@
+
+venv/
+.env
+config.json
+__pycache__/
+/.env.local
+node_modules
+.next
+/next-env.d.ts
+sparkenv
+
 /venv
 config.json
 .env
