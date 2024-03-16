@@ -1,2 +1,5 @@
 # jigar-env
 /sparkenv
+
+.env
+__pycache__
