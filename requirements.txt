@@ -1,3 +1,12 @@
+# extraction.py
 requests
 python-dotenv
 langchain
+dataclasses
+typing
+
+# embed.py
+sentence_transformers
+# langchain-community
+# nltk
+torch
