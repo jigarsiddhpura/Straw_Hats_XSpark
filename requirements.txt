@@ -6,7 +6,7 @@ dataclasses
 typing
 
 # embed.py
-sentence_transformers
+# sentence_transformers
 # langchain-community
 # nltk
-torch
+# torch
