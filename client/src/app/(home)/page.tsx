@@ -78,20 +78,14 @@ export default function Home() {
               <span className="text-transparent bg-gradient-to-b from-yellow-200 to-indigo-400 bg-clip-text mb-3">
                 Reinventing
               </span>{" "}
-              e - learning... The right way
+              referals... The right way
             </h1>
             <p className="mt-6 text-lg leading-8 text-zinc-400">
-              Unlocking Educational Potential: Our innovative solution for Multi-Modal Emotion Recognition enhances online education by understanding students emotions in real-time.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div className=" rounded-full px-3 py-1 mt-2 text-sm leading-6 text-gray-500 ring-1 ring-zinc-400  hover:ring-zinc-500">
-                Announcing our next round of funding.{" "}
-                <a href="#" className="font-semibold text-indigo-600 ml-1">
-                  Read more <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+          
+            <div className="mt-5 flex items-center justify-center gap-x-6">
               <Button variant="shadow" color="primary">
                 Get Started
               </Button>
@@ -139,7 +133,7 @@ export default function Home() {
             data-aos="fade-right"
             data-aos-delay="300"
           >
-            Transform your digital classroom
+            Transform your refering process
             <span className="block">Into an interactive</span>
             <div className="typewriter">
               <span className="text-transparent bg-gradient-to-b from-yellow-200 to-indigo-400 bg-clip-text">
@@ -184,7 +178,7 @@ export default function Home() {
             fill="white"
             fontSize="16pt"
           >
-            Teacher creates meet
+            List Potential Candidates
           </text>
           <text
             className="path-text-2"
@@ -195,7 +189,7 @@ export default function Home() {
             fill="white"
             fontSize="16pt"
           >
-            Student joins meet
+            AI Interview
           </text>
           <text
             className="path-text-3"
@@ -206,7 +200,7 @@ export default function Home() {
             fill="white"
             fontSize="16pt"
           >
-            Attends lecture
+            Jobs Suggested and Apply
           </text>
           <text
             className="path-text-3"
@@ -217,7 +211,7 @@ export default function Home() {
             fill="white"
             fontSize="16pt"
           >
-            Conducts lecture
+            Notified of Request
           </text>
           <text
             className="path-text-4"
@@ -228,18 +222,18 @@ export default function Home() {
             fill="white"
             fontSize="16pt"
           >
-            Mood detect
+            Matched 
           </text>
           <text
             className="path-text-5"
             dominantBaseline="middle"
             textAnchor="middle"
-            x="950"
-            y="200"
+            x="850"
+            y="250"
             fill="white"
             fontSize="16pt"
           >
-            Stats
+          Connection Complete
           </text>
           <circle
             cx="100"
@@ -287,139 +281,7 @@ export default function Home() {
       </div>
 
       {/* //! ye section white mode me dikhao */}
-      <div className=" h-96 mt-56 flex  justify-around">
-        <div
-          className="mx-32 my-8"
-          data-aos="zoom-in-left"
-          data-aos-delay="300"
-        >
-          {/* <Image src={scanAnimation} width={300} alt="scanAnimation" /> */}
-          <Image
-            src={scanAnimation}
-            width={300}
-            alt="scanAnimation"
-            data-aos="zoom-in-left"
-            data-aos-delay="300"
-          />
-        </div>
-        <div
-          className="flex justify-center align-middle my-20"
-          data-aos="zoom-in-left"
-          data-aos-delay="300"
-        >
-          <h1 className="text-5xl ">
-          <div className="container mx-auto mt-8">
-              <Typewriter text={textToType} />
-            </div>
-          </h1>
-        </div>
-      </div>
-
-        <h1 className="block text-center text-5xl mt-20"             data-aos="fade-left"
->Our Subscription Plans</h1>
-      <div className=" h-96 mt-32 flex justify-around mb-40">
-        <div
-                    data-aos="fade-right"
-
-          className="group relative max-w-md rounded-xl border border-white/10 bg-gray-900 px-8 py-16 shadow-2xl"
-          onMouseMove={handleMouseMove}
-        >
-
-<motion.div
-            className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
-            style={{
-              background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              rgba(14, 165, 233, 0.15),
-              transparent 80%
-            )
-          `,
-            }}
-          />
-          <div>
-            <h3 className="text-base font-semibold leading-7 text-sky-500">
-              Byline
-            </h3>
-            <div className="mt-2 flex items-center gap-x-2">
-              <span className="text-5xl font-bold tracking-tight text-yellow-300">
-                Gold 
-              </span>
-            </div>
-            <p className="mt-6 text-base leading-7 text-gray-300">
-              Get partial benefits of our all our advanced ML models.
-            </p>
-          </div>
-        </div>
-
-        <div
-                    data-aos="fade-right"
-
-          className="group relative max-w-md rounded-xl border border-white/10 bg-gray-900 px-8 py-16 shadow-2xl"
-          onMouseMove={handleMouseMove}
-        >
-
-<motion.div
-            className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
-            style={{
-              background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              rgba(14, 165, 233, 0.15),
-              transparent 80%
-            )
-          `,
-            }}
-          />
-          <div>
-            <h3 className="text-base font-semibold leading-7 text-sky-500">
-              Byline
-            </h3>
-            <div className="mt-2 flex items-center gap-x-2">
-              <span className="text-5xl font-bold tracking-tight text-blue-300 text-white">
-                Diamond 💎
-              </span>
-            </div>
-            <p className="mt-6 text-base leading-7 text-gray-300">
-              Get some benefits of our all our advanced ML models.
-            </p>
-          </div>
-        </div>
-
-        <div
-                    data-aos="fade-right"
-
-          className="group relative max-w-md rounded-xl border border-white/10 bg-gray-900 px-8 py-16 shadow-2xl"
-          onMouseMove={handleMouseMove}
-        >
-
-<motion.div
-            className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
-            style={{
-              background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              rgba(14, 165, 233, 0.15),
-              transparent 80%
-            )
-          `,
-            }}
-          />
-          <div>
-            <h3 className="text-base font-semibold leading-7 text-sky-500">
-              Byline
-            </h3>
-            <div className="mt-2 flex items-center gap-x-2">
-              <span className="text-5xl font-bold tracking-tight text-gray-400">
-                Premium
-              </span>
-            </div>
-            <p className="mt-6 text-base leading-7 text-gray-300">
-              Get full benefits of our all our advanced ML models.
-            </p>
-          </div>
-        </div>
-    </div>
+      
     </>
   );
 }

@@ -160,12 +160,12 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="xl" shouldHideOnScroll isBordered className="mb-2">
+    <NextUINavbar maxWidth="xl" shouldHideOnScroll isBordered className="mb-2 w-full">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className="font-bold text-inherit">TeachifAI</p>
+            <p className="font-bold text-inherit">ReferMe</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -197,51 +197,7 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="data-[active=true]:text-primary data-[active=true]:font-normal">
-                <HeartFilledIcon className="text-danger mr-1" />
-                Sponsor
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="flex">
-                  <div className="flex">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-zinc-400/50 to-zinc-400 p-6 no-underline outline-none focus:shadow-md"
-                          href="/"
-                        >
-                          <div className="flex justify-center">
-                            <Icons.google className="h-6 w-6" />
-                          </div>
-                          <div className="mb-2 mt-4 text-lg font-bold">
-                            shadcn/ui
-                          </div>
-                          <p className="text-sm leading-tight ">
-                            Innovating learning
-                          </p>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                  </div>
-                  <div className="flex flex-col bg-zinc-900 w-80">
-                    <ListItem href="/" title="Premium">
-                      Access to many features
-                    </ListItem>
-                    <ListItem href="/" title="Gold">
-                      Complete acess
-                    </ListItem>
-                    <ListItem href="/" title="diamond">
-                      Ultra special WOW!
-                    </ListItem>
-                  </div>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+   
         <NavbarItem className="hidden sm:flex gap-2 ">
           <Link isExternal href={""} aria-label="Twitter">
             <TwitterIcon className="text-default-500 hover:text-blue-400" />
@@ -271,9 +227,14 @@ export const Navbar = () => {
         {status === "authenticated" ? (
           <UserDropdown />
         ) : (
-          <Button as={Link} onPress={onOpen} variant="faded">
+          <div>
+            <Button as={Link} onPress={onOpen} variant="faded" className="mx-3">
             Login
           </Button>
+            <Button as={Link} onPress={onOpen} variant="faded">
+            Sign up
+          </Button>
+          </div>
         )}
       </NavbarItem>
 
@@ -344,6 +305,7 @@ export const Navbar = () => {
                 <Divider className="text-lime-400" />
                 <div className="container mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
                   <UserAuthForm />
+                  
                 </div>
               </ModalBody>
               <ModalFooter>

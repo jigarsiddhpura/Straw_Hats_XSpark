@@ -26,17 +26,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={font.className} suppressHydrationWarning>
       <body suppressHydrationWarning>
+      <div className="min-h-screen container w-full antialiased">
         <ReactQueryClientProvider>
           <AuthSessionProvider>
             <UIProvider>
-              <div className="min-h-screen container w-full antialiased">
+            
               <Toaster />
                 {children}
-              </div>
+            
             </UIProvider>
           </AuthSessionProvider>
         </ReactQueryClientProvider>
+        </div>
       </body>
+      
     </html>
   );
 }

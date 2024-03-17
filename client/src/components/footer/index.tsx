@@ -25,7 +25,7 @@ export default function index() {
             >
               <Logo />
               <span className="ml-2 text-xl font-bold tracking-wide uppercase">
-              TeachifAI
+              ReferMe
               </span>
             </a>
             <div className="mt-4 lg:max-w-sm">
