@@ -45,4 +45,22 @@ def getEmotion(request):
     
 
 def getQuestion(request):
-    pass
+
+    if request.method == 'POST':
+        if request.FILES.get('frame') :
+
+            frame = request.FILES['frame']  # base64 encoded image string
+            frame = process_image(frame)
+
+            emotions :list = DeepFace.analyze(frame, actions=["emotion"], detector_backend='mediapipe')
+            dominant_emotion = emotions[0]['dominant_emotion']
+            map = {'angry': 'angry', 'disgust': 'disgust', 'fear': 'nervous', 'happy': 'confident', 'sad': 'stressed', 'surprise': 'surprise', 'neutral': 'thinking'}
+
+            print(map[dominant_emotion])
+            mapped_emotion = map[dominant_emotion]
+            return JsonResponse({"dominant_emotion": mapped_emotion}, status=200)
+        else :
+            return JsonResponse({"error":"Frame not found"}, status=400)
+        
+    else :
+        return JsonResponse({"error":"Method not allowed"}, status=405)

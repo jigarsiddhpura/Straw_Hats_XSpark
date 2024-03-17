@@ -13,6 +13,7 @@ from IPython.display import Markdown
 import PIL.Image
 from PIL import Image
 
+
 def get_language_proficiency(username):
     token = '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'
     headers = {'Authorization': f'token {token}'}
@@ -79,10 +80,21 @@ def process_resume():
 def review_resume(request):
     if request.method == 'POST':
         pdf_file = request.FILES['resume']  # Get the PDF file from the request
+
+        folder_path = 'resume_pdfs'
+        
+        # Create the folder if it doesn't exist
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
         pdf_path = os.path.join('resume_pdfs', pdf_file.name)  # Create a path for the PDF file
+        print("-----------------------")
+        print(pdf_path)
+
         with open(pdf_path, 'wb+') as destination:  # Save the PDF file
             for chunk in pdf_file.chunks():
                 destination.write(chunk)
+
         result = pdf2jpg.convert_pdf2jpg(pdf_path, 'resume_images', dpi=300, pages="ALL")  # Convert the PDF to images
         result = process_resume()  # Process the images
         return JsonResponse({"result": result}, status=200)
