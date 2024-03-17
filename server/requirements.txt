@@ -26,3 +26,10 @@ sqlparse==0.4.4
 typing_extensions==4.10.0
 tzdata==2024.1
 urllib3==1.26.18
+djangorestframework-jsonapi
+pdf2jpg==1.0
+pathlib==1.0.1
+textwrap==3.10.0
+google-generativeai
+IPython==7.28.0
+Pillow==8.4.0

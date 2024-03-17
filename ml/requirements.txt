@@ -13,3 +13,19 @@ typing
 
 #emotion.py
 mediapipe
+
+# audio.py
+pyttsx3
+librosa
+scipy
+transformers
+webrtcvad
+
+
+#views.py
+pdf2jpg==1.0
+pathlib==1.0.1
+
+google-generativeai
+IPython==7.28.0
+Pillow==8.4.0
