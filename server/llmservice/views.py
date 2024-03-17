@@ -46,6 +46,7 @@ def getLanguageProficiency(request):
         username = request.POST.get('username')
         if username:
             result = get_language_proficiency(username)
+            result = json.loads(result)
             return JsonResponse({"result": result}, status=200)
         else:
             return JsonResponse({"error": "Username not provided"}, status=400)
@@ -97,6 +98,7 @@ def review_resume(request):
 
         result = pdf2jpg.convert_pdf2jpg(pdf_path, 'resume_images', dpi=300, pages="ALL")  # Convert the PDF to images
         result = process_resume()  # Process the images
+        result = json.loads(result)
         return JsonResponse({"result": result}, status=200)
     else:
         return JsonResponse({"error": "Method not allowed"}, status=405)
