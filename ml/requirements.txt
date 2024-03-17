@@ -13,3 +13,10 @@ typing
 
 #emotion.py
 mediapipe
+
+# audio.py
+pyttsx3
+librosa
+scipy
+transformers
+webrtcvad

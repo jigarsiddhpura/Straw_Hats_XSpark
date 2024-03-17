@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'llmservice.apps.LlmserviceConfig',
-    'rest_framework',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
