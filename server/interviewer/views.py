@@ -18,17 +18,11 @@ from PIL import Image
 from langchain.memory import ChatMessageHistory
 import json
 import requests
-import os
 
-# HF_BEARER_TOKEN = os.getenv('HF_BEARER_TOKEN')
-
-# API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
-# headers = {"Authorization": f"Bearer {HF_BEARER_TOKEN}"}
-
-# with open('..\\sampleUserInfo.json','r') as f:
-#     sampleUserInfo = json.loads(f)
-
-# history = ChatMessageHistory()
+import pyttsx3
+import librosa
+import webrtcvad
+from transformers import pipeline
 
 def queryMistral(query : str):
     response = requests.post(API_URL, headers=headers, json={"inputs":f"<s>[INST] {query} [/INST]"})
@@ -72,37 +66,38 @@ def getEmotion(request):
         
     else :
         return JsonResponse({"error":"Method not allowed"}, status=405)
+
     
-# @csrf_exempt
-# def getQuestion(request):
+@csrf_exempt
+def calculateSNR(request):
+    """calculates signal-to-noise ratio (SNR) for a given audio file"""
 
-#     if request.method == 'POST':
-#         if request.POST.get('question') :
+    if request.method == 'POST':
+        if request.FILES.get('path_to_wav_file') :
 
-#             information = sampleUserInfo["resume_review"]
+            wav_file = request.FILES['wav_file']
 
-#             CONVERSATION_PROMPT = f"""Act as a tech interviewer and interview based on the information of the candidate. Please note: Do not answer your own question and only ask one question at a time. The question can be of varying difficulty levels: easy, medium, or hard, and can be related to coding, HR, or any other relevant topic. 
-#             Tech stack : {information["skills"]}
-#             Years of experiene : {information['experience_in_yers']}.
-#             Most Proficient Languagues : {information["certificates"]}
-#             Internship : {information['internships']}
-#             Memory : {history}
-#             """
+            # FILE FORMAT  SHOULD BE AMONG - .wav, .mp3, .flac, and .ogg
+            audio_data, rate = librosa.load(wav_file, mono=True)
 
-#             # prompt = PromptTemplate(template=template,input)
-#             aiquestion = queryMistral(CONVERSATION_PROMPT)
-#             print(aiquestion)
+            audio_data = audio_data.astype(np.int16)
 
-#             # answer = input("\nAnswer : ")
+            vad = webrtcvad.Vad() # 3 is the highest aggressiveness setting
 
-#             # history.add_ai_message(question)
-#             # history.add_user_message(answer)
+            vad_result = vad.is_speech(audio_data.tobytes(), rate)
 
-#             # print("-----------------")
-            
-#             return JsonResponse({"question": aiquestion}, status=200)
-#         else :
-#             return JsonResponse({"error":"Frame not found"}, status=400)
-        
-#     else :
-#         return JsonResponse({"error":"Method not allowed"}, status=405)
+            e = np.array(vad_result, dtype=float)
+
+            S = np.sum(audio_data**2 * e)
+            N = np.sum(audio_data**2 * (1 - e))
+
+            # Calculate SNR
+            snr = 10 * np.log10((S / N))
+            return JsonResponse({"signal_to_noise_ratio": snr}, status=200)
+        else :
+            return JsonResponse({"error":"Frame not found"}, status=400)
+
+    else :
+        return JsonResponse({"error":"Method not allowed"}, status=405)
+
+    

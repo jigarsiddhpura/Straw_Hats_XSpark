@@ -61,4 +61,4 @@ def calculateSNR(path_to_wav_file):
 
     print(f"SNR: {snr} dB")
 
-# calculateSNR(".\\sparktest.wav")
+calculateSNR(".\\sparktest.wav")
