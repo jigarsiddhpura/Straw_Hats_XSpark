@@ -1,0 +1,74 @@
+{
+    "name":"Sergey",
+    "city":"Moscow",
+    "age":30,
+    "isStudent":false,
+    "university":"MGU",
+    "resume_url":"http://www.google.com",
+    "resume_review":{
+        "experience_in_yers":5,
+        "english_level":"B2",
+        "skills":["Java", "C++", "Python"],
+        "isStudent":false,
+        "university":[
+            {
+                "name":"MGU",
+                "faculty":"Computer Science",
+                "degree":"Bachelor",
+                "graduation_year":2010
+            },
+            {
+                "name":"MGU",
+                "faculty":"Computer Science",
+                "degree":"Master",
+                "graduation_year":2012
+            }
+        ],
+        "certificates":["Java", "C++", "Python"],
+        "internships":[
+            {
+                "company":"Yandex",
+                "position":"Java Developer",
+                "duration":"3 months"
+            },
+            {
+                "company":"Mail.ru",
+                "position":"C++ Developer",
+                "duration":"6 months"
+            }
+        ],
+        "projects":[
+            {
+                "name":"Project 1",
+                "description":"Description 1",
+                "technologies":["Java", "Spring", "Hibernate"],
+                "duration":"1 year"
+            },
+            {
+                "name":"Project 2",
+                "description":"Description 2",
+                "technologies":["C++", "STL", "Boost"],
+                "duration":"2 years"
+            }
+        ]
+
+    },
+    "interview_review":{
+        "date":"2019-01-01",
+        "converstation":[
+            {
+                "question":"Tell me about yourself",
+                "answer":"I am a Java Developer with 5 years of experience"
+            },
+            {
+                "question":"What is your biggest achievement?",
+                "answer":"I have developed a project that has been used by 1 million users"
+            }
+        ],
+        "result":"positive",
+        "comment":"Good candidate",
+        "summary":"Good candidate",
+        "emotion":"positive"
+
+    }
+}

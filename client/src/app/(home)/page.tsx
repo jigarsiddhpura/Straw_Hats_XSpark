@@ -78,8 +78,9 @@ export default function Home() {
               <span className="text-transparent bg-gradient-to-b from-yellow-200 to-indigo-400 bg-clip-text mb-3">
                 Reinventing
               </span>{" "}
-              referals... The right way
+              Referrals..
             </h1>
+            <p className="text-[2rem]">The right way</p>
             <p className="mt-6 text-lg leading-8 text-zinc-400">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -91,9 +92,9 @@ export default function Home() {
               </Button>
               <a
                 href="#"
-                className="text-sm text-zinc-400 font-semibold leading-6"
+                className="text-sm text-white-500 font-semibold leading-6"
               >
-                Learn more <span aria-hidden="true">→</span>
+                Take AI INTERVIEW <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>

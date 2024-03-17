@@ -98,7 +98,14 @@ def review_resume(request):
 
         result = pdf2jpg.convert_pdf2jpg(pdf_path, 'resume_images', dpi=300, pages="ALL")  # Convert the PDF to images
         result = process_resume()  # Process the images
-        result = json.loads(result)
-        return JsonResponse({"result": result}, status=200)
+        start_index = result.find('{')
+
+        json_string = result[start_index:-3]  # Remove the extra quotation mark and newline characters
+
+        json_object = json.loads(json_string)
+
+        print(json_object)
+        # result = json.loads(result)
+        return JsonResponse({"result": json_object}, status=200)
     else:
         return JsonResponse({"error": "Method not allowed"}, status=405)
