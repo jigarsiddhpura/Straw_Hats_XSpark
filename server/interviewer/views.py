@@ -73,7 +73,7 @@ def calculateSNR(request):
     """calculates signal-to-noise ratio (SNR) for a given audio file"""
 
     if request.method == 'POST':
-        if request.FILES.get('path_to_wav_file') :
+        if request.FILES.get('wav_file') :
 
             wav_file = request.FILES['wav_file']
 
@@ -93,6 +93,7 @@ def calculateSNR(request):
 
             # Calculate SNR
             snr = 10 * np.log10((S / N))
+            
             return JsonResponse({"signal_to_noise_ratio": snr}, status=200)
         else :
             return JsonResponse({"error":"Frame not found"}, status=400)
